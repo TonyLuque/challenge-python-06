@@ -1,10 +1,8 @@
 def make_division_by(n):
-    """This closure returns a function that returns the division
-       of an x number by n 
-    """
-    # You have to code here!
-    pass
-
+    def division(x):
+        assert type(x) == int, 'Solo puedes dividir números'
+        return x/n
+    return division
 
 def run():
     division_by_3 = make_division_by(3)
@@ -22,7 +20,9 @@ if __name__ == '__main__':
 
     class ClosureSuite(unittest.TestCase):
         def test_closure_make_division_by(self):
-            # Make the closure test here
-            pass
-
+            division_by_2 = make_division_by(2)
+            self.assertEqual(5, division_by_2(10))
+    
+    
+    #unittest.main()
     run()
